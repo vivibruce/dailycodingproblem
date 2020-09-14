@@ -36,6 +36,7 @@ class Node:
 		else:
 			l.append(-1)
 		return l
+	
 
 def deserialize(lst):
 	if lst:
@@ -49,10 +50,12 @@ def deserialize(lst):
 		else:
 			node.right = None
 	return node
+def count_nodes(node):
+	return count_nodes(node.left) + count_nodes(node.right) + 1 if node else 0
 	
 
 node = Node('root', Node('left', Node('left.left')), Node('right'))
 print(deserialize(node.serialiaze()).left.left.data == 'left.left')
-
+print(count_nodes(node))
 
 #  [1, [2, -1, -1], [3, [4, -1, -1], -1]]
