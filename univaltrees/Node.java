@@ -50,7 +50,6 @@ class Node{
 				return false;
 			}
 		}
-
 		else{
 			return true;
 		}
